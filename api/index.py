@@ -51,7 +51,7 @@ class handler(BaseHTTPRequestHandler):
             if param.find('stations=') >= 0:
                 stations = param.split('stations=')[1]
             elif param.find('distances=') >= 0:
-                distances = float(param.split('distances=')[1])
+                distances = list(param.split('distances=')[1])
             else:
                 print('unknown parameter', param)
 
