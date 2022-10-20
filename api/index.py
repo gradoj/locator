@@ -38,12 +38,11 @@ class handler(BaseHTTPRequestHandler):
 
 
         print(self.path)
-        query = urlparse(self.path.encode('ASCII')).query
+        query = urlparse(self.path).query.encode('ASCII')
         print('query',query)
 
         params=query.split('&')
-        params=self.path.split('&')
-        print('params', params)
+
         stations=[]
         distances=[]
         for param in params:
