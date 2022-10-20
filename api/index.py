@@ -38,7 +38,7 @@ class handler(BaseHTTPRequestHandler):
 
 
         print(self.path)
-        query = urlparse(self.path).query.encode('ASCII')
+        query = urlparse(self.path).query
         print('query',query)
 
         params=query.split('&')
