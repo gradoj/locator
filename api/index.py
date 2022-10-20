@@ -42,7 +42,8 @@ class handler(BaseHTTPRequestHandler):
         print('query',query)
 
         params=query.split('&')
-        print(params)
+        params=self.path.split('&')
+        print('params', params)
         stations=[]
         distances=[]
         for param in params:
