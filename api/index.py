@@ -1,7 +1,7 @@
 from http.server import BaseHTTPRequestHandler
 from urllib.parse import urlparse, unquote
 import json
-from scipy import minimize
+from scipy.optimize import minimize
 from numpy.linalg import norm
 
 def gps_solve(distances_to_station, stations_coordinates):
