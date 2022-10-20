@@ -1,5 +1,6 @@
 from http.server import BaseHTTPRequestHandler
 from urllib.parse import urlparse, unquote
+import urllib
 import json
 from scipy.optimize import minimize
 from numpy.linalg import norm
@@ -39,6 +40,7 @@ class handler(BaseHTTPRequestHandler):
 
         print(self.path)
         query = urlparse(self.path).query
+        query = urllib.parse.unquote(query)
         print('query',query)
 
         params=query.split('&')
