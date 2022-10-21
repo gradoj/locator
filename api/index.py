@@ -1,7 +1,7 @@
 from http.server import BaseHTTPRequestHandler
 from urllib.parse import urlparse, unquote
 import urllib
-import json
+import ast
 from scipy.optimize import minimize
 from numpy.linalg import norm
 
@@ -55,7 +55,8 @@ class handler(BaseHTTPRequestHandler):
             else:
                 print('unknown parameter', param)
 
-
+        distances = ast.literal_eval(distances)
+        stations = ast.literal_eval(stations)
         print('distances', distances)
         print('stations', stations)
         estimate = gps_solve(distances, stations)
