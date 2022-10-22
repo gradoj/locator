@@ -4,7 +4,7 @@ import urllib
 import ast
 from scipy.optimize import minimize
 from numpy.linalg import norm
-from numpy import array
+from numpy import array, array2string
 
 def gps_solve(distances_to_station, stations_coordinates):
 	def error(x, c, r):
@@ -64,5 +64,5 @@ class handler(BaseHTTPRequestHandler):
         estimate = gps_solve(distances, stations)
         print('estimate', estimate)
 
-        self.wfile.write(estimate.encode('utf-8'))
+        self.wfile.write(array2string(estimate).encode('utf-8'))
         return
