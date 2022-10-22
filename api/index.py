@@ -64,5 +64,5 @@ class handler(BaseHTTPRequestHandler):
         estimate = gps_solve(distances, stations)
         print('estimate', estimate)
 
-        self.wfile.write(estimate)
+        self.wfile.write(estimate.encode('utf-8'))
         return
